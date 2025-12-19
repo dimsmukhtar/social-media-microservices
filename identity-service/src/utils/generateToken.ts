@@ -11,12 +11,6 @@ export const generateToken = async (
   })
   const refreshToken = crypto.randomBytes(64).toString('hex')
   const refreshTokenKey = `refresh-token:${refreshToken}`
-  await setRedis(
-    refreshTokenKey,
-    JSON.stringify({
-      userId: userId.toString()
-    }),
-    60 * 60 * 24 * 7
-  ) // 7 days
+  await setRedis(refreshTokenKey, { userId }, 60 * 60 * 24 * 7) // 7 days
   return { accessToken, refreshToken }
 }

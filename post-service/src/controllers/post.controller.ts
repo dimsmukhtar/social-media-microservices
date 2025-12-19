@@ -4,6 +4,7 @@ import { Post } from '../models/Post'
 import { validateCreatePost } from '../utils/validation'
 import { setRedis } from '../utils/setRedis'
 import { invalidateCache } from '../utils/invalidateCache'
+import mongoose from 'mongoose'
 
 export const createPost = async (
   req: Request,
@@ -86,11 +87,35 @@ export const getPost = async (
   next: NextFunction
 ) => {
   try {
+    const { id } = req.params
+    if (!mongoose.Types.ObjectId.isValid(id!)) {
+      return res.status(400).json({
+        success: false,
+        message: 'invalid post id'
+      })
+    }
+    const post = await Post.findById(id)
+    if (!post) {
+      return res.status(404).json({
+        success: false,
+        message: `post with id ${req.params.id} not found`
+      })
+    }
+    const response = {
+      success: true,
+      post,
+      message: `success get post by id ${req.params.id}`
+    }
+    if ((res as any).cacheKey) {
+      await setRedis((res as any).cacheKey, response, (res as any).cacheTTL)
+      logger.info('success caching the get post by id')
+    }
+    res.status(200).json(response)
   } catch (error) {
-    logger.error('get post error occured', error)
+    logger.error('get post by id error occured', error)
     res.status(500).json({
       success: false,
-      message: 'get post internal server error'
+      message: 'get post  by id internal server error'
     })
   }
 }
@@ -101,6 +126,25 @@ export const deletePost = async (
   next: NextFunction
 ) => {
   try {
+    const { id } = req.params
+    if (!mongoose.Types.ObjectId.isValid(id!)) {
+      return res.status(400).json({
+        success: false,
+        message: 'invalid post id'
+      })
+    }
+    const post = await Post.findOneAndDelete({ _id: id })
+    if (!post) {
+      return res.status(404).json({
+        success: false,
+        message: `post with id ${req.params.id} not found`
+      })
+    }
+    await invalidateCache('post')
+    res.status(200).json({
+      success: false,
+      message: `post with id ${id} deleted successfully`
+    })
   } catch (error) {
     logger.error('deleting post error occured', error)
     res.status(500).json({

@@ -366,3 +366,41 @@
 {"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T14:34:04.440Z"}
 {"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T14:34:04.443Z"}
 {"level":"info","message":"recieved POST request to /api/auth/login","service":"identity-service","timestamp":"2025-12-19T14:34:46.893Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T16:55:51.308Z"}
+{"level":"warn","message":"there is no refresh token in the redis","service":"identity-service","timestamp":"2025-12-19T16:55:51.310Z"}
+{"level":"info","message":"recieved POST request to /api/auth/login","service":"identity-service","timestamp":"2025-12-19T16:56:00.787Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:11:45.390Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:13:30.266Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:13:30.283Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:13:30.286Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:13:33.436Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:14:02.737Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:14:02.770Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:14:02.780Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:14:08.334Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:14:31.642Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:14:31.662Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:14:31.667Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:14:34.217Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:14:52.957Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:14:52.975Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:14:52.978Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:14:55.301Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:15:06.879Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:15:06.901Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:15:06.906Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:15:09.274Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:15:38.646Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:15:38.661Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:15:38.664Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:15:41.577Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:18:46.143Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:18:46.163Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:18:46.167Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:19:12.769Z"}
+{"level":"warn","message":"there is no refresh token in the redis","service":"identity-service","timestamp":"2025-12-19T17:19:12.772Z"}
+{"level":"info","message":"recieved POST request to /api/auth/login","service":"identity-service","timestamp":"2025-12-19T17:19:16.935Z"}
+{"level":"info","message":"recieved POST request to /api/auth/refresh","service":"identity-service","timestamp":"2025-12-19T17:19:28.241Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T17:19:47.452Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T17:19:47.468Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T17:19:47.472Z"}
