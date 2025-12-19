@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import { logger } from '../utils/logger'
 import { Post } from '../models/Post'
+import { validateCreatePost } from '../utils/validation'
 
 export const createPost = async (
   req: Request,
@@ -8,11 +9,21 @@ export const createPost = async (
   next: NextFunction
 ) => {
   try {
-    const { content, mediaIds } = req.body
+    const { error } = validateCreatePost(req.body)
+    if (error) {
+      logger.warn(
+        'validation error while create a post',
+        error.details[0]?.message
+      )
+      return res.status(400).json({
+        success: false,
+        message: `validation error while create a post ${error.details[0]?.message}`
+      })
+    }
     const createdPost = new Post({
       user: req.user!.userId,
-      content,
-      mediaIds: mediaIds || []
+      content: req.body.content,
+      mediaIds: req.body.mediaIds || []
     })
     await createdPost.save()
     logger.info('post created successfully')

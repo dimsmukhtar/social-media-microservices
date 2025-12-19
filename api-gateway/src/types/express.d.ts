@@ -1,5 +1,4 @@
 import 'express'
-import redis from '../utils/redis'
 
 declare global {
   namespace Express {
@@ -9,7 +8,6 @@ declare global {
 
     interface Request {
       user?: User
-      redisClient?: ReturnType<typeof redis>
     }
   }
 }

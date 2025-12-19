@@ -356,3 +356,9 @@
 {"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-18T18:27:28.933Z"}
 {"level":"info","message":"recieved POST request to /api/auth/logout","service":"identity-service","timestamp":"2025-12-18T18:28:10.012Z"}
 {"level":"info","message":"recieved POST request to /api/auth/logout","service":"identity-service","timestamp":"2025-12-18T18:28:11.552Z"}
+{"level":"info","message":"redis connection is established","service":"identity-service","timestamp":"2025-12-19T12:34:15.296Z"}
+{"level":"info","message":"connected to mongodb","service":"identity-service","timestamp":"2025-12-19T12:34:15.310Z"}
+{"level":"info","message":"redis is ready","service":"identity-service","timestamp":"2025-12-19T12:34:15.313Z"}
+{"level":"info","message":"recieved POST request to /api/auth/register","service":"identity-service","timestamp":"2025-12-19T12:39:22.383Z"}
+{"buffer":{"data":[105,69,71,122,237,219,109,215,4,192,64,16],"type":"Buffer"},"level":"warn","message":"user saved successfuly","service":"identity-service","timestamp":"2025-12-19T12:39:22.518Z"}
+{"level":"info","message":"recieved POST request to /api/auth/login","service":"identity-service","timestamp":"2025-12-19T13:53:57.740Z"}

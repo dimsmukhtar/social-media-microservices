@@ -112,3 +112,31 @@
 {"level":"info","message":"identity service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-12-18T18:28:29.810Z"}
 {"level":"info","message":"redis connection is established","service":"api-gateway","timestamp":"2025-12-18T18:28:29.821Z"}
 {"level":"info","message":"redis is ready","service":"api-gateway","timestamp":"2025-12-18T18:28:29.825Z"}
+{"level":"info","message":"api gateway is running on port 3000","service":"api-gateway","timestamp":"2025-12-19T12:34:19.379Z"}
+{"level":"info","message":"identity service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-12-19T12:34:19.381Z"}
+{"level":"info","message":"post service is running on port http://localhost:3002","service":"api-gateway","timestamp":"2025-12-19T12:34:19.381Z"}
+{"level":"info","message":"redis connection is established","service":"api-gateway","timestamp":"2025-12-19T12:34:19.386Z"}
+{"level":"info","message":"redis is ready","service":"api-gateway","timestamp":"2025-12-19T12:34:19.392Z"}
+{"level":"info","message":"recieved POST request to /v1/auth/register","service":"api-gateway","timestamp":"2025-12-19T12:39:22.357Z"}
+{"level":"info","message":"response recieved from identity service: 201, message: Created","service":"api-gateway","timestamp":"2025-12-19T12:39:22.527Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T13:52:35.110Z"}
+{"level":"warn","message":"access attempt without valid token","service":"api-gateway","timestamp":"2025-12-19T13:52:35.110Z"}
+{"level":"info","message":"recieved POST request to /v1/auth/login","service":"api-gateway","timestamp":"2025-12-19T13:53:57.738Z"}
+{"level":"info","message":"response recieved from identity service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T13:53:57.813Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T13:54:05.637Z"}
+{"level":"info","message":"response recieved from post service: 401, message: Unauthorized","service":"api-gateway","timestamp":"2025-12-19T13:54:05.652Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T13:55:17.772Z"}
+{"level":"info","message":"response recieved from post service: 401, message: Unauthorized","service":"api-gateway","timestamp":"2025-12-19T13:55:17.785Z"}
+{"level":"info","message":"api gateway is running on port 3000","service":"api-gateway","timestamp":"2025-12-19T13:55:55.607Z"}
+{"level":"info","message":"identity service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-12-19T13:55:55.613Z"}
+{"level":"info","message":"post service is running on port http://localhost:3002","service":"api-gateway","timestamp":"2025-12-19T13:55:55.613Z"}
+{"level":"info","message":"redis connection is established","service":"api-gateway","timestamp":"2025-12-19T13:55:55.618Z"}
+{"level":"info","message":"redis is ready","service":"api-gateway","timestamp":"2025-12-19T13:55:55.621Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T13:56:04.194Z"}
+{"level":"info","message":"response recieved from post service: 201, message: Created","service":"api-gateway","timestamp":"2025-12-19T13:56:04.214Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T14:00:32.069Z"}
+{"level":"error","message":"proxy error: connect ECONNREFUSED 127.0.0.1:3002","service":"api-gateway","timestamp":"2025-12-19T14:00:32.072Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T14:00:46.286Z"}
+{"level":"info","message":"response recieved from post service: 400, message: Bad Request","service":"api-gateway","timestamp":"2025-12-19T14:00:46.308Z"}
+{"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T14:01:36.872Z"}
+{"level":"info","message":"response recieved from post service: 201, message: Created","service":"api-gateway","timestamp":"2025-12-19T14:01:36.906Z"}
