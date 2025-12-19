@@ -3,6 +3,7 @@ import { logger } from '../utils/logger'
 import { Post } from '../models/Post'
 import { validateCreatePost } from '../utils/validation'
 import { setRedis } from '../utils/setRedis'
+import { invalidateCache } from '../utils/invalidateCache'
 
 export const createPost = async (
   req: Request,
@@ -27,6 +28,7 @@ export const createPost = async (
       mediaIds: req.body.mediaIds || []
     })
     await createdPost.save()
+    await invalidateCache('post')
     logger.info('post created successfully')
     res.status(201).json({
       success: true,

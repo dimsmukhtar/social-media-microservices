@@ -8,7 +8,6 @@ import cors from 'cors'
 import { logger } from './utils/logger'
 import { errorHandler } from './middlewares/errorHandler'
 import postRoutes from './routes/post.router'
-import redis from './utils/redis'
 
 mongoose
   .connect(process.env.MONGODB_URL!)
@@ -31,14 +30,7 @@ app.get('/health', (_req: Request, res: Response) => {
   res.send('ok')
 })
 
-app.use(
-  '/api/post',
-  (req: Request, res: Response, next: NextFunction) => {
-    req.redisClient = redis
-    next()
-  },
-  postRoutes
-)
+app.use('/api/post', postRoutes)
 
 app.use(errorHandler)
 

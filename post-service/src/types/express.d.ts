@@ -9,7 +9,6 @@ declare global {
 
     interface Request {
       user?: User
-      redisClient?: ReturnType<typeof redis>
     }
   }
 }
