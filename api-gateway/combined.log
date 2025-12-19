@@ -140,3 +140,106 @@
 {"level":"info","message":"response recieved from post service: 400, message: Bad Request","service":"api-gateway","timestamp":"2025-12-19T14:00:46.308Z"}
 {"level":"info","message":"recieved POST request to /v1/post/create","service":"api-gateway","timestamp":"2025-12-19T14:01:36.872Z"}
 {"level":"info","message":"response recieved from post service: 201, message: Created","service":"api-gateway","timestamp":"2025-12-19T14:01:36.906Z"}
+{"level":"info","message":"api gateway is running on port 3000","service":"api-gateway","timestamp":"2025-12-19T14:34:07.682Z"}
+{"level":"info","message":"identity service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-12-19T14:34:07.684Z"}
+{"level":"info","message":"post service is running on port http://localhost:3002","service":"api-gateway","timestamp":"2025-12-19T14:34:07.684Z"}
+{"level":"info","message":"redis connection is established","service":"api-gateway","timestamp":"2025-12-19T14:34:07.690Z"}
+{"level":"info","message":"redis is ready","service":"api-gateway","timestamp":"2025-12-19T14:34:07.694Z"}
+{"level":"info","message":"recieved GET request to /v1/post/getAll","service":"api-gateway","timestamp":"2025-12-19T14:34:43.584Z"}
+{"level":"warn","message":"access attempt without valid token","service":"api-gateway","timestamp":"2025-12-19T14:34:43.585Z"}
+{"level":"info","message":"recieved POST request to /v1/auth/login","service":"api-gateway","timestamp":"2025-12-19T14:34:46.869Z"}
+{"level":"info","message":"response recieved from identity service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:34:47.020Z"}
+{"level":"info","message":"recieved GET request to /v1/post/getAll","service":"api-gateway","timestamp":"2025-12-19T14:34:55.565Z"}
+{"level":"error","message":"proxy error: socket hang up","service":"api-gateway","timestamp":"2025-12-19T14:35:14.173Z"}
+{"level":"info","message":"recieved GET request to /v1/post/getAll","service":"api-gateway","timestamp":"2025-12-19T14:35:52.975Z"}
+{"level":"error","message":"proxy error: socket hang up","service":"api-gateway","timestamp":"2025-12-19T14:36:01.243Z"}
+{"level":"info","message":"recieved GET request to /v1/post/getAll","service":"api-gateway","timestamp":"2025-12-19T14:37:17.380Z"}
+{"level":"error","message":"proxy error: socket hang up","service":"api-gateway","timestamp":"2025-12-19T14:37:21.558Z"}
+{"level":"info","message":"recieved GET request to /v1/post/getAllPosts","service":"api-gateway","timestamp":"2025-12-19T14:39:00.502Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:39:00.563Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:40:43.489Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:40:43.526Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:40:47.077Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:40:47.082Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:40:49.007Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:40:49.012Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:40:49.986Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:40:49.991Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:35.142Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:35.167Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:36.266Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:36.271Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:38.473Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:38.476Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:39.759Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:39.763Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:40.944Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:40.947Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:42.048Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:42.052Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:43.016Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:43.020Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:43.942Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:43.945Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:45.034Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:45.038Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:45.934Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:45.941Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:41:46.743Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:41:46.746Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:42:13.970Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:42:14.027Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:42:28.078Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:42:28.085Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:42:36.456Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:42:36.463Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:43:57.646Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:43:57.650Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:43:58.731Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:43:58.735Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:43:59.792Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:43:59.796Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:00.811Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:00.814Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:01.743Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:01.746Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:02.597Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:02.601Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:03.477Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:03.481Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:04.295Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:04.298Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:05.209Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:05.212Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:05.901Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:05.904Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:06.534Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:06.538Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:07.176Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:07.179Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:07.870Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:07.873Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:09.587Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:09.590Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:11.596Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:11.600Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:13.600Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:13.603Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:14.541Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:14.544Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:15.901Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:15.904Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:16.965Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:16.968Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:17.858Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:17.861Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:18.736Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:18.740Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:19.587Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:19.590Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:20.307Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:20.310Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:22.292Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:22.295Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T14:44:23.495Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T14:44:23.499Z"}

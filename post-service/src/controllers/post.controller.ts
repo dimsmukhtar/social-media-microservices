@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { logger } from '../utils/logger'
 import { Post } from '../models/Post'
 import { validateCreatePost } from '../utils/validation'
+import { setRedis } from '../utils/setRedis'
 
 export const createPost = async (
   req: Request,
@@ -46,6 +47,28 @@ export const getAllPosts = async (
   next: NextFunction
 ) => {
   try {
+    const page = Number(req.query.page) || 1
+    const limit = Number(req.query.limit) || 10
+    const skip = (page - 1) * limit
+
+    const posts = await Post.find({})
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+    const totalPosts = await Post.countDocuments()
+    const response = {
+      success: true,
+      posts,
+      message: 'success get all posts',
+      currentPage: page,
+      totalPages: Math.ceil(totalPosts / limit),
+      totalPosts
+    }
+    if ((res as any).cacheKey) {
+      await setRedis((res as any).cacheKey, response, (res as any).cacheTTL)
+      logger.info('success caching the get all posts')
+    }
+    res.status(200).json(response)
   } catch (error) {
     logger.error('get all posts error occured', error)
     res.status(500).json({

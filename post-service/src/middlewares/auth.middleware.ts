@@ -8,7 +8,6 @@ export const authenticateRequest = (
   next: NextFunction
 ) => {
   const userId = getSingleHeader(req.headers['x-user-id'])
-  console.log('USER ID =====', userId)
   if (!userId) {
     logger.warn('access attempted without user ID')
     return res.status(401).json({
