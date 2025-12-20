@@ -69,6 +69,7 @@ app.use((req: Request, res: Response, next: NextFunction) => [
     })
 ])
 app.use('/api/auth/register', sensitiveEndpointsLimiter)
+app.use('/api/auth/login', sensitiveEndpointsLimiter)
 
 app.get('/health', (_req: Request, res: Response) => {
   res.send('ok')

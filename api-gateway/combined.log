@@ -325,3 +325,47 @@
 {"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T17:23:59.725Z"}
 {"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-19T17:24:00.819Z"}
 {"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-19T17:24:00.821Z"}
+{"level":"info","message":"api gateway is running on port 3000","service":"api-gateway","timestamp":"2025-12-20T07:53:38.137Z"}
+{"level":"info","message":"identity service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-12-20T07:53:38.140Z"}
+{"level":"info","message":"post service is running on port http://localhost:3002","service":"api-gateway","timestamp":"2025-12-20T07:53:38.140Z"}
+{"level":"info","message":"media service is running on port http://localhost:3003","service":"api-gateway","timestamp":"2025-12-20T07:53:38.140Z"}
+{"level":"info","message":"redis connection is established","service":"api-gateway","timestamp":"2025-12-20T07:53:38.146Z"}
+{"level":"info","message":"redis is ready","service":"api-gateway","timestamp":"2025-12-20T07:53:38.150Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-20T07:56:42.850Z"}
+{"level":"warn","message":"access attempt without valid token","service":"api-gateway","timestamp":"2025-12-20T07:56:42.850Z"}
+{"level":"info","message":"recieved POST request to /v1/auth/login","service":"api-gateway","timestamp":"2025-12-20T07:57:11.366Z"}
+{"level":"info","message":"response recieved from identity service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-20T07:57:11.522Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-20T07:57:15.342Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-20T07:57:15.406Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T07:58:36.323Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T07:58:36.345Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T07:59:47.359Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T07:59:50.534Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T08:01:55.801Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T08:02:01.939Z"}
+{"level":"info","message":"api gateway is running on port 3000","service":"api-gateway","timestamp":"2025-12-20T10:47:42.707Z"}
+{"level":"info","message":"identity service is running on port http://localhost:3001","service":"api-gateway","timestamp":"2025-12-20T10:47:42.709Z"}
+{"level":"info","message":"post service is running on port http://localhost:3002","service":"api-gateway","timestamp":"2025-12-20T10:47:42.709Z"}
+{"level":"info","message":"media service is running on port http://localhost:3003","service":"api-gateway","timestamp":"2025-12-20T10:47:42.709Z"}
+{"level":"info","message":"redis connection is established","service":"api-gateway","timestamp":"2025-12-20T10:47:42.714Z"}
+{"level":"info","message":"redis is ready","service":"api-gateway","timestamp":"2025-12-20T10:47:42.718Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-20T10:48:23.837Z"}
+{"level":"warn","message":"access attempt without valid token","service":"api-gateway","timestamp":"2025-12-20T10:48:23.838Z"}
+{"level":"info","message":"recieved POST request to /v1/auth/refresh","service":"api-gateway","timestamp":"2025-12-20T10:48:30.994Z"}
+{"level":"info","message":"response recieved from identity service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-20T10:48:31.060Z"}
+{"level":"info","message":"recieved GET request to /v1/post/all-posts","service":"api-gateway","timestamp":"2025-12-20T10:48:35.524Z"}
+{"level":"info","message":"response recieved from post service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-20T10:48:35.572Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T10:48:38.725Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T10:48:43.562Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T10:49:58.834Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T10:50:01.628Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T10:50:56.651Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T10:51:02.567Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T12:41:54.649Z"}
+{"level":"warn","message":"access attempt without valid token","service":"api-gateway","timestamp":"2025-12-20T12:41:54.649Z"}
+{"level":"info","message":"recieved POST request to /v1/auth/refresh","service":"api-gateway","timestamp":"2025-12-20T12:42:01.300Z"}
+{"level":"info","message":"response recieved from identity service: 200, message: OK","service":"api-gateway","timestamp":"2025-12-20T12:42:01.313Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T12:42:04.001Z"}
+{"level":"info","message":"response recieved from media service: 500, message: Internal Server Error","service":"api-gateway","timestamp":"2025-12-20T12:42:09.017Z"}
+{"level":"info","message":"recieved POST request to /v1/media/upload","service":"api-gateway","timestamp":"2025-12-20T12:42:44.516Z"}
+{"level":"info","message":"response recieved from media service: 201, message: Created","service":"api-gateway","timestamp":"2025-12-20T12:42:52.016Z"}
