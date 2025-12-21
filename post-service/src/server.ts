@@ -8,6 +8,7 @@ import cors from 'cors'
 import { logger } from './utils/logger'
 import { errorHandler } from './middlewares/errorHandler'
 import postRoutes from './routes/post.router'
+import { connectToRabbitMQ } from './utils/rabbitmq'
 
 mongoose
   .connect(process.env.MONGODB_URL!)
@@ -34,9 +35,19 @@ app.use('/api/post', postRoutes)
 
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-  console.log('post service is running on port', PORT)
-})
+async function startServer() {
+  try {
+    await connectToRabbitMQ()
+    app.listen(PORT, () => {
+      console.log('post service is running on port', PORT)
+    })
+  } catch (error) {
+    logger.error('failed to start the server')
+    logger.error(error)
+    process.exit(1)
+  }
+}
+startServer()
 
 process.on('unhandledRejection', (reason, promise) => {
   logger.error('unhandledRejection at:', promise, 'reason:', reason)

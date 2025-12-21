@@ -5,6 +5,7 @@ import { validateCreatePost } from '../utils/validation'
 import { setRedis } from '../utils/setRedis'
 import { invalidateCache } from '../utils/invalidateCache'
 import mongoose from 'mongoose'
+import { publishMessage } from '../utils/rabbitmq'
 
 export const createPost = async (
   req: Request,
@@ -140,6 +141,11 @@ export const deletePost = async (
         message: `post with id ${req.params.id} not found`
       })
     }
+    await publishMessage(process.env.ROUTING_KEY!, {
+      postId: post._id.toString(),
+      userId: req.user?.userId,
+      mediaIds: post.mediaIds
+    })
     await invalidateCache('post')
     res.status(200).json({
       success: false,

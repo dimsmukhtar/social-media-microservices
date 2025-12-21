@@ -8,6 +8,8 @@ import cors from 'cors'
 import { logger } from './utils/logger'
 import { errorHandler } from './middlewares/errorHandler'
 import mediaRoutes from './routes/media.router'
+import { connectToRabbitMQ } from './utils/rabbitmq'
+import { startPostDeletedConsumer } from './consumers/postDeleted.consumer'
 
 mongoose
   .connect(process.env.MONGODB_URL!)
@@ -34,9 +36,20 @@ app.use('/api/media', mediaRoutes)
 
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-  console.log('media service is running on port', PORT)
-})
+async function startServer() {
+  try {
+    await connectToRabbitMQ()
+    await startPostDeletedConsumer()
+    app.listen(PORT, () => {
+      console.log('media service is running on port', PORT)
+    })
+  } catch (error) {
+    logger.error('failed to start the server')
+    logger.error(error)
+    process.exit(1)
+  }
+}
+startServer()
 
 process.on('unhandledRejection', (reason, promise) => {
   logger.error('unhandledRejection at:', promise, 'reason:', reason)

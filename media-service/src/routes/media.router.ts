@@ -1,6 +1,6 @@
 import express, { NextFunction, Router, Request, Response } from 'express'
 import multer from 'multer'
-import { uploadMedia } from '../controllers/media.controller'
+import { getAllMedias, uploadMedia } from '../controllers/media.controller'
 import { authenticateRequest } from '../middlewares/auth.middleware'
 import { logger } from '../utils/logger'
 
@@ -44,5 +44,7 @@ router.post(
   },
   uploadMedia
 )
+
+router.get('/all-medias', getAllMedias)
 
 export default router

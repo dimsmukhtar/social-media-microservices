@@ -48,3 +48,20 @@ export const uploadMedia = async (
     })
   }
 }
+
+export const getAllMedias = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const result = await Media.find({})
+    res.status(200).json({ result })
+  } catch (error) {
+    logger.error('fetching media error occured', error)
+    res.status(500).json({
+      success: false,
+      message: 'fetching media internal server error'
+    })
+  }
+}

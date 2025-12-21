@@ -26,3 +26,14 @@ export const uploadMediaToCloudinary = (file: Express.Multer.File) => {
     uploadStream.end(file.buffer)
   })
 }
+
+export const deleteMediaFromCloudinary = async (publidId: string) => {
+  try {
+    const result = await cloudinary.uploader.destroy(publidId)
+    logger.info('media deleted successfully from cloudinary', publidId)
+    return result
+  } catch (error) {
+    logger.error('error deleting media from cloudinary', error)
+    throw error
+  }
+}
