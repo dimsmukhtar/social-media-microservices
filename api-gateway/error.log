@@ -1,4 +1,0 @@
-{"level":"error","message":"proxy error: connect ECONNREFUSED 127.0.0.1:3002","service":"api-gateway","timestamp":"2025-12-19T14:00:32.072Z"}
-{"level":"error","message":"proxy error: socket hang up","service":"api-gateway","timestamp":"2025-12-19T14:35:14.173Z"}
-{"level":"error","message":"proxy error: socket hang up","service":"api-gateway","timestamp":"2025-12-19T14:36:01.243Z"}
-{"level":"error","message":"proxy error: socket hang up","service":"api-gateway","timestamp":"2025-12-19T14:37:21.558Z"}
