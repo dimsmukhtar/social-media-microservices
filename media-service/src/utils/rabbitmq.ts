@@ -6,7 +6,6 @@ let connection
 let channel: Channel | undefined
 
 const EXCHANGE_NAME = process.env.EXCHANGE_NAME!
-const QUEUE_NAME = process.env.QUEUE_NAME!
 
 export const connectToRabbitMQ = async () => {
   if (channel) return channel
@@ -50,6 +49,7 @@ export const publishMessage = async (routingKey: string, message: any) => {
 }
 
 export const consumeMessage = async <T>(
+  queueName: string,
   routingKey: string,
   callback: (message: T) => Promise<void> | void
 ) => {
@@ -57,13 +57,13 @@ export const consumeMessage = async <T>(
     await connectToRabbitMQ()
   }
 
-  await channel!.assertQueue(QUEUE_NAME, {
+  await channel!.assertQueue(queueName, {
     durable: true
   })
 
-  await channel?.bindQueue(QUEUE_NAME, EXCHANGE_NAME, routingKey)
+  await channel?.bindQueue(queueName, EXCHANGE_NAME, routingKey)
 
-  channel!.consume(QUEUE_NAME, async (msg) => {
+  channel!.consume(queueName, async (msg) => {
     if (!msg) return
 
     try {
@@ -76,6 +76,6 @@ export const consumeMessage = async <T>(
     }
   })
   logger.info(
-    `subscribed to queue: ${QUEUE_NAME} with routing key: ${routingKey}`
+    `subscribed to queue: ${queueName} with routing key: ${routingKey}`
   )
 }
