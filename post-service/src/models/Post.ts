@@ -10,6 +10,7 @@ interface Post {
   user: Types.ObjectId
   content: string
   mediaIds: [string]
+  createdAt?: Date
 }
 
 export type PostDocument = HydratedDocument<Post, {}> // TRawDocType, TInstanceMethods

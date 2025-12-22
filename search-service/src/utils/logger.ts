@@ -8,7 +8,7 @@ export const logger = winston.createLogger({
     winston.format.splat(),
     winston.format.json()
   ),
-  defaultMeta: { service: 'identity-service' },
+  defaultMeta: { service: 'search-service' },
   transports: [
     new winston.transports.Console({
       format: winston.format.combine(

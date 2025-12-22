@@ -30,6 +30,12 @@ export const createPost = async (
       mediaIds: req.body.mediaIds || []
     })
     await createdPost.save()
+    await publishMessage(process.env.CREATE_ROUTING_KEY!, {
+      postId: createdPost._id.toString(),
+      userId: createdPost.user.toString(),
+      content: createdPost.content,
+      createdAt: createdPost.createdAt
+    })
     await invalidateCache('post')
     logger.info('post created successfully')
     res.status(201).json({
@@ -141,7 +147,7 @@ export const deletePost = async (
         message: `post with id ${req.params.id} not found`
       })
     }
-    await publishMessage(process.env.ROUTING_KEY!, {
+    await publishMessage(process.env.DELETE_ROUTING_KEY!, {
       postId: post._id.toString(),
       userId: req.user?.userId,
       mediaIds: post.mediaIds

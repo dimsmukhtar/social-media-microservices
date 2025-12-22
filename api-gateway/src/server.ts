@@ -127,6 +127,33 @@ app.use(
   })
 )
 
+app.use(
+  '/v1/search',
+  validateToken,
+  proxy(process.env.SEARCH_SERVICE_URL!, {
+    proxyReqPathResolver: (req: Request) => {
+      return req.originalUrl.replace(/^\/v1/, '/api')
+    },
+    proxyErrorHandler: (err: Error, res: Response, next: NextFunction) => {
+      logger.error(`proxy error: ${err.message}`)
+      res.status(500).json({
+        message: `internal server error, error: ${err.message}`
+      })
+    },
+    proxyReqOptDecorator: (proxyReqOpts, srcReq) => {
+      proxyReqOpts.headers['content-type'] = 'application/json'
+      proxyReqOpts.headers['x-user-id'] = srcReq.user?.userId
+      return proxyReqOpts
+    },
+    userResDecorator: (proxyRes, proxyResData, userReq, userRes) => {
+      logger.info(
+        `response recieved from search service: ${proxyRes.statusCode}, message: ${proxyRes.statusMessage}`
+      )
+      return proxyResData
+    }
+  })
+)
+
 app.use(errorHandler)
 
 app.listen(PORT, () => {
@@ -137,5 +164,8 @@ app.listen(PORT, () => {
   logger.info(`post service is running on port ${process.env.POST_SERVICE_URL}`)
   logger.info(
     `media service is running on port ${process.env.MEDIA_SERVICE_URL}`
+  )
+  logger.info(
+    `search service is running on port ${process.env.SEARCH_SERVICE_URL}`
   )
 })

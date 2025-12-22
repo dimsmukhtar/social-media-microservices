@@ -1,0 +1,142 @@
+services:
+  mic-mongodb:
+    image: mongo:8.0
+    container_name: mic-mongodb
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dims
+      - MONGO_INITDB_ROOT_PASSWORD=dims
+    networks:
+      - mic-network
+
+  mic-rabbitmq:
+    image: rabbitmq:4.2-management-alpine
+    container_name: mic-rabbitmq
+    restart: unless-stopped
+    environment:
+      - RABBITMQ_DEFAULT_USER=dims
+      - RABBITMQ_DEFAULT_PASS=dims
+    networks:
+      - mic-network
+
+  mic-redis:
+    image: redis:8.2
+    container_name: mic-redis
+    restart: unless-stopped
+    command: >
+      sh -c "redis-server --requirepass $${REDIS_PASSWORD} --appendonly yes"
+    environment:
+      - REDIS_PASSWORD=dims
+    networks:
+      - mic-network
+  api-gateway:
+    build: ./api-gateway
+    image: api-gateway-image
+    restart: unless-stopped
+    container_name: api-gateway
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mic-redis
+      - mic-rabbitmq
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - JWT_SECRET=secret
+      - REDIS_PASSWORD=dims
+      - REDIS_HOST=mic-redis
+      - REDIS_PORT=6379
+      - IDENTITY_SERVICE_URL=http://identity-service:3001
+      - POST_SERVICE_URL=http://post-service:3002
+      - MEDIA_SERVICE_URL=http://media-service:3003
+      - SEARCH_SERVICE_URL=http://search-service:3004
+    networks:
+      - mic-network
+  identity-service:
+    build: ./identity-service
+    image: identity-service-image
+    restart: unless-stopped
+    container_name: identity-service
+    depends_on:
+      - mic-redis
+      - mic-rabbitmq
+      - mic-mongodb
+    environment:
+      - PORT=3001
+      - JWT_SECRET=secret
+      - REDIS_PASSWORD=dims
+      - REDIS_HOST=mic-redis
+      - REDIS_PORT=6379
+      - MONGODB_URL=mongodb://dims:dims@mic-mongodb:27017/social-media-mic?authSource=admin
+    networks:
+      - mic-network
+  post-service:
+    build: ./post-service
+    image: post-service-image
+    restart: unless-stopped
+    container_name: post-service
+    depends_on:
+      - mic-redis
+      - mic-rabbitmq
+      - mic-mongodb
+    environment:
+      - PORT=3002
+      - REDIS_PASSWORD=dims
+      - REDIS_HOST=mic-redis
+      - REDIS_PORT=6379
+      - MONGODB_URL=mongodb://dims:dims@mic-mongodb:27017/social-media-mic?authSource=admin
+      - RABBITMQ_URL=amqp://dims:dims@mic-rabbitmq:5672/
+      - EXCHANGE_NAME=facebook_events
+      - DELETE_ROUTING_KEY=post.deleted
+      - CREATE_ROUTING_KEY=post.created
+    networks:
+      - mic-network
+  media-service:
+    build: ./media-service
+    image: media-service-image
+    restart: unless-stopped
+    container_name: media-service
+    depends_on:
+      - mic-redis
+      - mic-rabbitmq
+      - mic-mongodb
+    environment:
+      - PORT=3003
+      - REDIS_PASSWORD=dims
+      - REDIS_HOST=mic-redis
+      - REDIS_PORT=6379
+      - MONGODB_URL=mongodb://dims:dims@mic-mongodb:27017/social-media-mic?authSource=admin
+      - RABBITMQ_URL=amqp://dims:dims@mic-rabbitmq:5672/
+      - EXCHANGE_NAME=facebook_events
+      - DELETE_ROUTING_KEY=post.deleted
+      - DELETE_QUEUE_NAME=post.deleted
+      - CLOUDINARY_NAME=${CLOUDINARY_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_SECRET=${CLOUDINARY_SECRET}
+    networks:
+      - mic-network
+  search-service:
+    build: ./search-service
+    image: search-service-image
+    restart: unless-stopped
+    container_name: search-service
+    depends_on:
+      - mic-redis
+      - mic-rabbitmq
+      - mic-mongodb
+    environment:
+      - PORT=3004
+      - REDIS_PASSWORD=dims
+      - REDIS_HOST=mic-redis
+      - REDIS_PORT=6379
+      - MONGODB_URL=mongodb://dims:dims@mic-mongodb:27017/social-media-mic?authSource=admin
+      - RABBITMQ_URL=amqp://dims:dims@mic-rabbitmq:5672/
+      - EXCHANGE_NAME=facebook_events
+      - CREATE_ROUTING_KEY=post.created
+      - CREATE_QUEUE_NAME=post.created
+    networks:
+      - mic-network
+networks:
+  mic-network:
+    name: mic-network
+    driver: bridge
